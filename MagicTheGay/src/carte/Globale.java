@@ -7,6 +7,8 @@ package carte;
  * @author Labmultimediale
  *
  */
-public interface Permanenti extends Carta{
-
+public record Globale() {
+	
+	public static int numero = 80;
+	
 }
