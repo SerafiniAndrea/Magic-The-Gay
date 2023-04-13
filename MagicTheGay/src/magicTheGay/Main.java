@@ -30,7 +30,6 @@ public class Main {
 			you.pesca();
 			opponent.pesca();
 		}
-		System.out.println("artigay");
 	}
 
 }
