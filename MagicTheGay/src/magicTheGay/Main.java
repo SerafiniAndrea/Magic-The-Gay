@@ -3,6 +3,8 @@
  */
 package magicTheGay;
 
+import java.util.Collections;
+
 import carte.*;
 
 /**
@@ -20,6 +22,15 @@ public class Main {
 		Libreria libreria = new Libreria();
 		Player you = new Player();
 		Player opponent = new Player();
-	} 
+		you.mazzo.addAll(libreria.grixisMidrange);
+		opponent.mazzo.addAll(libreria.grixisMidrange);
+		Collections.shuffle(you.mazzo);
+		Collections.shuffle(opponent.mazzo);
+		for(int i = 0; i < 7; i++) {
+			you.pesca();
+			opponent.pesca();
+		}
+		
+	}
 
 }

@@ -16,5 +16,4 @@ public enum Tipo {
 	Planeswalker,
 	Terra,
 	Creatura;
-	
 }

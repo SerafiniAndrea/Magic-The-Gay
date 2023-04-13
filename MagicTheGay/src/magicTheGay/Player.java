@@ -13,12 +13,19 @@ import carte.Carta;
  */
 public class Player {
 	
-	public ArrayList<Carta> deck = new ArrayList<>();
-	public ArrayList<Carta> graveyard = new ArrayList<>();
-	public ArrayList<Carta> lands = new ArrayList<>();
+	public ArrayList<Carta> mazzo = new ArrayList<>();
+	public ArrayList<Carta> cimitero = new ArrayList<>();
+	public ArrayList<Carta> terre = new ArrayList<>();
+	public ArrayList<Carta> mano = new ArrayList<>();
+	public int vita = 20;
 	
 	public Player() {
 		
+	}
+	
+	public void pesca() {
+		this.mano.add(this.mazzo.get(0));
+		this.mazzo.remove(0);
 	}
 	
 }

@@ -3,40 +3,20 @@
  */
 package carte;
 
-import java.util.ArrayList;
-
 /**
  * @author Labmultimediale
  *
  */
-public class Carta {
+public abstract class Carta {
 	
 	private Tipo tipo;
-	private String nome = "";
-	private int costo = 0;
-	private int forza = 0;
-	private int costituzione = 0;
+	private String nome;
+	private int costo;
 	
-	public Carta(Tipo tipo, String nome, int costo, int forza, int costituzione) {
-		this.setTipo(tipo);
-		this.setNome(nome);
-		this.setCosto(costo);
-		this.setForza(forza);
-		this.setCostituzione(costituzione);
-	}
-
-	/**
-	 * @return the nome
-	 */
-	public String getNome() {
-		return nome;
-	}
-
-	/**
-	 * @param nome the nome to set
-	 */
-	public void setNome(String nome) {
+	public Carta(Tipo tipo, String nome, int costo) {
+		this.tipo = tipo;
 		this.nome = nome;
+		this.setCosto(costo);
 	}
 
 	/**
@@ -54,34 +34,6 @@ public class Carta {
 	}
 
 	/**
-	 * @return the forza
-	 */
-	public int getForza() {
-		return forza;
-	}
-
-	/**
-	 * @param forza the forza to set
-	 */
-	public void setForza(int forza) {
-		this.forza = forza;
-	}
-
-	/**
-	 * @return the costituzione
-	 */
-	public int getCostituzione() {
-		return costituzione;
-	}
-
-	/**
-	 * @param costituzione the costituzione to set
-	 */
-	public void setCostituzione(int costituzione) {
-		this.costituzione = costituzione;
-	}
-
-	/**
 	 * @return the tipo
 	 */
 	public Tipo getTipo() {
@@ -89,10 +41,10 @@ public class Carta {
 	}
 
 	/**
-	 * @param tipo the tipo to set
+	 * @return the nome
 	 */
-	public void setTipo(Tipo tipo) {
-		this.tipo = tipo;
+	public String getNome() {
+		return nome;
 	}
 	
 }

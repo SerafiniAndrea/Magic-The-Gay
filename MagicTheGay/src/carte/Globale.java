@@ -9,6 +9,6 @@ package carte;
  */
 public record Globale() {
 	
-	public static int numero = 80;
+	public static int massimo = 80;
 	
 }
