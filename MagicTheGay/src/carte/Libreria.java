@@ -12,9 +12,11 @@ import java.util.ArrayList;
 public class Libreria {
 	
 	public ArrayList<Carta> grixisMidrange = new ArrayList<>();
+	public ArrayList<Carta> drawTwoDimir = new ArrayList<>();
 	
 	public Libreria() {
 		this.grixisMidrangeGenerator();
+		this.drawTwoDimirGenerator();
 	}
 	
 	public void grixisMidrangeGenerator() {
@@ -31,32 +33,29 @@ public class Libreria {
 		this.grixisMidrange.add(new Istantaneo("Negate", 2));
 		this.grixisMidrange.add(new Istantaneo("Parasitic Grasp", 2));
 		this.grixisMidrange.add(new Istantaneo("Parasitic Grasp", 2));
-		this.grixisMidrange.add(new Terra("Blackleave Cliffs"));
-		this.grixisMidrange.add(new Terra("Blackleave Cliffs"));
-		this.grixisMidrange.add(new Terra("Blackleave Cliffs"));
-		this.grixisMidrange.add(new Terra("Derkslick Shores"));
-		this.grixisMidrange.add(new Terra("Derkslick Shores"));
-		this.grixisMidrange.add(new Terra("Derkslick Shores"));
-		this.grixisMidrange.add(new Terra("Haunted Ridge"));
-		this.grixisMidrange.add(new Terra("Haunted Ridge"));
-		this.grixisMidrange.add(new Terra("Haunted Ridge"));
-		this.grixisMidrange.add(new Terra("Shipwreck Marsh"));
-		this.grixisMidrange.add(new Terra("Shipwreck Marsh"));
-		this.grixisMidrange.add(new Terra("Shipwreck Marsh"));
-		this.grixisMidrange.add(new Terra("Shipwreck Marsh"));
-		this.grixisMidrange.add(new Terra("Shivan Reef"));
-		this.grixisMidrange.add(new Terra("Shivan Reef"));
-		this.grixisMidrange.add(new Terra("Shivan Reef"));
-		this.grixisMidrange.add(new Terra("Sulfurous Springs"));
-		this.grixisMidrange.add(new Terra("Sulfurous Springs"));
-		this.grixisMidrange.add(new Terra("Sulfurous Springs"));
-		this.grixisMidrange.add(new Terra("Sulfurous Springs"));
-		this.grixisMidrange.add(new Terra("Swamp"));
-		this.grixisMidrange.add(new Terra("Takenuma Abandoned Mire"));
-		this.grixisMidrange.add(new Terra("Xanders Lounge"));
-		this.grixisMidrange.add(new Terra("Xanders Lounge"));
-		this.grixisMidrange.add(new Terra("Xanders Lounge"));
-		this.grixisMidrange.add(new Terra("Xanders Lounge"));
+		this.grixisMidrange.add(new Terra("Blackleave Cliffs", Mana.Nero, Mana.Rosso));
+		this.grixisMidrange.add(new Terra("Blackleave Cliffs", Mana.Nero, Mana.Rosso));
+		this.grixisMidrange.add(new Terra("Blackleave Cliffs", Mana.Nero, Mana.Rosso));
+		this.grixisMidrange.add(new Terra("Derkslick Shores", Mana.Blu, Mana.Nero));
+		this.grixisMidrange.add(new Terra("Derkslick Shores", Mana.Blu, Mana.Nero));
+		this.grixisMidrange.add(new Terra("Derkslick Shores", Mana.Blu, Mana.Nero));
+		this.grixisMidrange.add(new Terra("Haunted Ridge", Mana.Nero, Mana.Rosso));
+		this.grixisMidrange.add(new Terra("Haunted Ridge", Mana.Nero, Mana.Rosso));
+		this.grixisMidrange.add(new Terra("Haunted Ridge", Mana.Nero, Mana.Rosso));
+		this.grixisMidrange.add(new Terra("Shipwreck Marsh", Mana.Blu, Mana.Nero));
+		this.grixisMidrange.add(new Terra("Shipwreck Marsh", Mana.Blu, Mana.Nero));
+		this.grixisMidrange.add(new Terra("Shipwreck Marsh", Mana.Blu, Mana.Nero));
+		this.grixisMidrange.add(new Terra("Shipwreck Marsh", Mana.Blu, Mana.Nero));
+		this.grixisMidrange.add(new Terra("Sulfurous Springs", Mana.Generico, Mana.Nero, Mana.Rosso, true));
+		this.grixisMidrange.add(new Terra("Sulfurous Springs", Mana.Generico, Mana.Nero, Mana.Rosso, true));
+		this.grixisMidrange.add(new Terra("Sulfurous Springs", Mana.Generico, Mana.Nero, Mana.Rosso, true));
+		this.grixisMidrange.add(new Terra("Sulfurous Springs", Mana.Generico, Mana.Nero, Mana.Rosso, true));
+		this.grixisMidrange.add(new Terra("Swamp", Mana.Nero));
+		this.grixisMidrange.add(new Terra("Takenuma Abandoned Mire", Mana.Nero));
+		this.grixisMidrange.add(new Terra("Xanders Lounge", Mana.Blu, Mana.Nero, Mana.Rosso, false));
+		this.grixisMidrange.add(new Terra("Xanders Lounge", Mana.Blu, Mana.Nero, Mana.Rosso, false));
+		this.grixisMidrange.add(new Terra("Xanders Lounge", Mana.Blu, Mana.Nero, Mana.Rosso, false));
+		this.grixisMidrange.add(new Terra("Xanders Lounge", Mana.Blu, Mana.Nero, Mana.Rosso, false));
 		this.grixisMidrange.add(new Creatura("Bladecoil Serpent", 7, 5, 4));
 		this.grixisMidrange.add(new Creatura("Bloodtithe Harvester", 2, 3, 2));
 		this.grixisMidrange.add(new Creatura("Bloodtithe Harvester", 2, 3, 2));
@@ -82,4 +81,66 @@ public class Libreria {
 		this.grixisMidrange.add(new Incantesimo("Fable of the Mirror-Breaker", 3));
 	}
 	
+	public void drawTwoDimirGenerator() {
+		this.drawTwoDimir.add(new Creatura("Evolved Sleeper", 1 , 1 , 1));
+		this.drawTwoDimir.add(new Creatura("Evolved Sleeper", 1 , 1 , 1));
+		this.drawTwoDimir.add(new Creatura("Evolved Sleeper", 1 , 1 , 1));
+		this.drawTwoDimir.add(new Creatura("Evolved Sleeper", 1 , 1 , 1));
+		this.drawTwoDimir.add(new Creatura("Evangel of Synthesis", 2 , 2 , 3));
+		this.drawTwoDimir.add(new Creatura("Evangel of Synthesis", 2 , 2 , 3));
+		this.drawTwoDimir.add(new Creatura("Evangel of Synthesis", 2 , 2 , 3));
+		this.drawTwoDimir.add(new Creatura("Evangel of Synthesis", 2 , 2 , 3));
+		this.drawTwoDimir.add(new Creatura("Faerie Vandal", 2 , 1 , 2));
+		this.drawTwoDimir.add(new Creatura("Faerie Vandal", 2 , 1 , 2));
+		this.drawTwoDimir.add(new Creatura("Faerie Vandal", 2 , 1 , 2));
+		this.drawTwoDimir.add(new Creatura("Faerie Vandal", 2 , 1 , 2));
+		this.drawTwoDimir.add(new Creatura("Gurling Anoiter", 3 , 1 , 3));
+		this.drawTwoDimir.add(new Creatura("Gurling Anoiter", 3 , 1 , 3));
+		this.drawTwoDimir.add(new Creatura("Gurling Anoiter", 3 , 1 , 3));
+		this.drawTwoDimir.add(new Creatura("Gurling Anoiter", 3 , 1 , 3));
+		this.drawTwoDimir.add(new Creatura("Gixian Puppeteer", 4 , 4 , 3));
+		this.drawTwoDimir.add(new Creatura("Gixian Puppeteer", 4 , 4 , 3));
+		this.drawTwoDimir.add(new Creatura("Gixian Puppeteer", 4 , 4 , 3));
+		this.drawTwoDimir.add(new Creatura("Gixian Puppeteer", 4 , 4 , 3));
+		this.drawTwoDimir.add(new Istantaneo("Consider", 1));
+		this.drawTwoDimir.add(new Istantaneo("Consider", 1));
+		this.drawTwoDimir.add(new Istantaneo("Consider", 1));
+		this.drawTwoDimir.add(new Istantaneo("Consider", 1));
+		this.drawTwoDimir.add(new Istantaneo("Rona's Vortex", 1));
+		this.drawTwoDimir.add(new Istantaneo("Rona's Vortex", 1));
+		this.drawTwoDimir.add(new Istantaneo("Go For The Throat", 2));
+		this.drawTwoDimir.add(new Istantaneo("Go For The Throat", 2));
+		this.drawTwoDimir.add(new Istantaneo("Infernal Grasp", 2));
+		this.drawTwoDimir.add(new Istantaneo("Infernal Grasp", 2));
+		this.drawTwoDimir.add(new Istantaneo("Tainted Indulgence", 2));
+		this.drawTwoDimir.add(new Istantaneo("Tainted Indulgence", 2));
+		this.drawTwoDimir.add(new Istantaneo("Tainted Indulgence", 2));
+		this.drawTwoDimir.add(new Istantaneo("Tainted Indulgence", 2));
+		this.drawTwoDimir.add(new Istantaneo("Thirst for Discovery", 3));
+		this.drawTwoDimir.add(new Istantaneo("Thirst for Discovery", 3));
+		this.drawTwoDimir.add(new Istantaneo("Thirst for Discovery", 3));
+		this.drawTwoDimir.add(new Istantaneo("Thirst for Discovery", 3));
+		this.drawTwoDimir.add(new Terra("Island", Mana.Blu));
+		this.drawTwoDimir.add(new Terra("Island", Mana.Blu));
+		this.drawTwoDimir.add(new Terra("Island", Mana.Blu));
+		this.drawTwoDimir.add(new Terra("Island", Mana.Blu));
+		this.drawTwoDimir.add(new Terra("Island", Mana.Blu));
+		this.drawTwoDimir.add(new Terra("Island", Mana.Blu));
+		this.drawTwoDimir.add(new Terra("Island", Mana.Blu));
+		this.drawTwoDimir.add(new Terra("Shipwreck Marsh", Mana.Blu, Mana.Nero));
+		this.drawTwoDimir.add(new Terra("Shipwreck Marsh", Mana.Blu, Mana.Nero));
+		this.drawTwoDimir.add(new Terra("Shipwreck Marsh", Mana.Blu, Mana.Nero));
+		this.drawTwoDimir.add(new Terra("Shipwreck Marsh", Mana.Blu, Mana.Nero));
+		this.drawTwoDimir.add(new Terra("Swamp", Mana.Nero));
+		this.drawTwoDimir.add(new Terra("Swamp", Mana.Nero));
+		this.drawTwoDimir.add(new Terra("Swamp", Mana.Nero));
+		this.drawTwoDimir.add(new Terra("Swamp", Mana.Nero));
+		this.drawTwoDimir.add(new Terra("Swamp", Mana.Nero));
+		this.drawTwoDimir.add(new Terra("Swamp", Mana.Nero));
+		this.drawTwoDimir.add(new Terra("Swamp", Mana.Nero));
+		this.drawTwoDimir.add(new Terra("Underground River", Mana.Generico, Mana.Blu, Mana.Nero, true));
+		this.drawTwoDimir.add(new Terra("Underground River", Mana.Generico, Mana.Blu, Mana.Nero, true));
+		this.drawTwoDimir.add(new Terra("Underground River", Mana.Generico, Mana.Blu, Mana.Nero, true));
+		this.drawTwoDimir.add(new Terra("Underground River", Mana.Generico, Mana.Blu, Mana.Nero, true));
+	}
 }

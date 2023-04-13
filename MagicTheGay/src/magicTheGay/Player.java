@@ -28,4 +28,9 @@ public class Player {
 		this.mazzo.remove(0);
 	}
 	
+	public void scarta() {
+		this.cimitero.add(null);
+		
+	}
+	
 }
