@@ -13,6 +13,5 @@ public enum Mana {
 	Nero,
 	Blu,
 	Verde,
-	Generico,
-	CanisCabbo;
+	Generico;
 }

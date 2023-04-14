@@ -3,6 +3,8 @@
  */
 package carte;
 
+import java.util.ArrayList;
+
 /**
  * @author Labmultimediale
  *
@@ -11,11 +13,13 @@ public class Creatura extends Carta{
 	
 	private int forza = 0;
 	private int costituzione = 0;
+	private ArrayList<Mana> mana = new ArrayList<>();
 	
-	public Creatura(String nome, int costo, int forza, int costituzione) {
+	public Creatura(String nome, int costo, int forza, int costituzione, ArrayList<Mana> mana) {
 		super(Tipo.Creatura, nome, costo);
 		this.setForza(forza);
 		this.setCostituzione(costituzione);
+		this.mana.addAll(mana);
 	}
 	
 	/**
