@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Terra extends Carta{
 	
 	private boolean utilizzata = false;
-	private ArrayList<Mana> mana;
+	private ArrayList<Mana> mana = new ArrayList<>();
 	private Mana manaBase = null;
 	private Mana manaSecondario = null;
 	boolean effetto = false;

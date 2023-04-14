@@ -3,6 +3,7 @@
  */
 package magicTheGay;
 
+import java.util.Scanner;
 import java.util.ArrayList;
 
 import carte.Carta;
@@ -29,7 +30,18 @@ public class Player {
 	}
 	
 	public void scarta() {
-		this.cimitero.add(null);
+		
+		Scanner scanner = new Scanner (System.in);
+		
+		int cartaDaScartare = 0;
+		int i = 0;
+		System.out.println("Scegli una carta da scartare: ");
+		for(Carta carta : mano) {
+			System.out.println(i + 1 + " " + carta.getNome());
+			i++;
+		}
+		scanner.nextInt();
+		this.cimitero.add(this.mano.get(cartaDaScartare-1));
 		
 	}
 	
