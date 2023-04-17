@@ -18,6 +18,8 @@ public class Player {
 	public ArrayList<Carta> cimitero = new ArrayList<>();
 	public ArrayList<Carta> terre = new ArrayList<>();
 	public ArrayList<Carta> mano = new ArrayList<>();
+	public ArrayList<Carta> campo = new ArrayList<>();
+	
 	public int vita = 20;
 	
 	public Player() {
@@ -43,6 +45,11 @@ public class Player {
 		scanner.nextInt();
 		this.cimitero.add(this.mano.get(cartaDaScartare-1));
 		
+	}
+	
+	@Override
+	public Player clone() throws CloneNotSupportedException{
+		return (Player)super.clone();
 	}
 	
 }
