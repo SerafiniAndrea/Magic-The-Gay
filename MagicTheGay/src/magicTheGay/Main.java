@@ -38,83 +38,75 @@ public class Main {
 		Collections.shuffle(opponent.mazzo);
 		
 		if(numeroditurni == 0) {
-			
 			for(int i = 0; i < 7; i++) {
 				you.pesca();
 				opponent.pesca();
 			}
-		}
-			
-		do {
-			
+		}	
+		do {	
 			if(firstplayer) {
 				try {	
 					player = opponent.clone();
-				} catch (CloneNotSupportedException e) {
+				} 
+				catch (CloneNotSupportedException e) {
 					e.printStackTrace();
 				}
 				firstplayer = false;
-			} else {
+			} 
+			else {
 				try {
 					player = you.clone();
-				} catch (CloneNotSupportedException e) {
+				} 
+				catch (CloneNotSupportedException e) {
 					e.printStackTrace();
 				}
 				firstplayer = true;
 			}
-			
 			if (numeroditurni !=0) {
 				opponent.pesca();
 			}
 				
 			int escludi = 0;
-				
+			int escludi1 = 0;
+			
 			do {
-					
 				System.out.println("Vuoi giocare le terre? Si o No: ");
-				giocaterre = scanner.nextLine();
-					
-				
+				giocaterre = scanner.nextLine();	
 				if(giocaterre.equals("Si") || giocaterre.equals("SI") || giocaterre.equals("sI") || giocaterre.equals("si")) {
-					
 					for(int i = 0; i < opponent.mano.size(); i++) {
-					
 						if(opponent.mano.get(i).getTipo() == Tipo.Terra) {
-						
 							System.out.println(i + 1 + " " + opponent.mano.get(i).getNome());
-							controllaterre [i] = i - 1;
 						}
 					}
 					
-					System.out.println("Quale terra vuoi giocare? ");
-					giocaqualeterra = scanner.nextInt();
-					if (opponent.mano.get(giocaqualeterra).getTipo() == Tipo.Terra) {
-						System.out.println("è un terra: ");
-					}
-					
-					/*if (opponent.terre.isEmpty() == true) {
-							
-						System.out.println("Quali terre vuoi attivare? ");
-									
-					}*/
-				
+					do {
+						System.out.println("Quale terra vuoi giocare? ");
+						giocaqualeterra = scanner.nextInt()-1;
+						if (opponent.mano.get(giocaqualeterra).getTipo() == Tipo.Terra) {
+							System.out.println("Si, è un terra: ");
+							opponent.terre.add(opponent.mano.get(giocaqualeterra));
+						}
+						else {
+							System.out.println("No, non è una terra: ");
+							escludi = 1;
+						}
+					}while(escludi1 != 0);	
 				}
 				
 				else if (giocaterre.equals("No") || giocaterre.equals("NO") || giocaterre.equals("nO") || giocaterre.equals("no")) {
-					
 					continue;
-					
 				}
-				
-				else {
-					
+				else {	
 					System.out.println("Scelta invalida. ");
 					escludi = 1;
 				}
-					
-			} while(escludi != 0);
-			
+			} while(escludi != 0);	
 			numeroditurni++;
+			if (opponent.terre.isEmpty() == false) {
+				
+				System.out.println("Quali terre vuoi attivare? ");
+							
+			}
 			
 		}while(you.vita <= 0 || opponent.vita <= 0);
 		
