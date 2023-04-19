@@ -12,7 +12,7 @@ import carte.Carta;
  * @author Labmultimediale
  *
  */
-public class Player {
+public class Player implements Cloneable {
 	
 	public ArrayList<Carta> mazzo = new ArrayList<>();
 	public ArrayList<Carta> cimitero = new ArrayList<>();

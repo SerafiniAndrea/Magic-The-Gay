@@ -20,6 +20,8 @@ public class Main {
 		
 		String giocaterre = "";
 		int giocaqualeterra = 0;
+		int controllaterre [] = {0};
+		int attivaqualiterre [] = {0};
 		
 		boolean firstplayer = randomBool(Math.random());
 		
@@ -46,7 +48,7 @@ public class Main {
 		do {
 			
 			if(firstplayer) {
-				try {
+				try {	
 					player = opponent.clone();
 				} catch (CloneNotSupportedException e) {
 					e.printStackTrace();
@@ -80,19 +82,21 @@ public class Main {
 						if(opponent.mano.get(i).getTipo() == Tipo.Terra) {
 						
 							System.out.println(i + 1 + " " + opponent.mano.get(i).getNome());
-							
+							controllaterre [i] = i - 1;
 						}
 					}
 					
-					System.out.println("Quale terre vuoi giocare? ");
+					System.out.println("Quale terra vuoi giocare? ");
 					giocaqualeterra = scanner.nextInt();
-						
-					if(opponent.terre.isEmpty() == true) {
+					if (opponent.mano.get(giocaqualeterra).getTipo() == Tipo.Terra) {
+						System.out.println("è un terra: ");
+					}
+					
+					/*if (opponent.terre.isEmpty() == true) {
 							
 						System.out.println("Quali terre vuoi attivare? ");
-							
-							
-					}
+									
+					}*/
 				
 				}
 				
