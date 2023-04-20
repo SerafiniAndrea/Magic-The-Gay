@@ -9,19 +9,15 @@ import java.util.Scanner;
 
 import carte.*;
 
-
 public class Main {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args){
 	
 		Scanner scanner = new Scanner (System.in);
 		
 		double numeroditurni = 0;
-		
 		String giocaterre = "";
 		int giocaqualeterra = 0;
-		int controllaterre [] = {0};
-		int attivaqualiterre [] = {0};
 		
 		boolean firstplayer = randomBool(Math.random());
 		
@@ -63,67 +59,63 @@ public class Main {
 				firstplayer = true;
 			}
 			if (numeroditurni !=0) {
-				opponent.pesca();
+				player.pesca();
 			}
 				
 			int escludi = 0;
 			int escludi1 = 0;
-			
-			do {
-				System.out.println("Vuoi giocare le terre? Si o No: ");
-				giocaterre = scanner.nextLine();	
-				if(giocaterre.equals("Si") || giocaterre.equals("SI") || giocaterre.equals("sI") || giocaterre.equals("si")) {
-					for(int i = 0; i < opponent.mano.size(); i++) {
-						if(opponent.mano.get(i).getTipo() == Tipo.Terra) {
-							System.out.println(i + 1 + " " + opponent.mano.get(i).getNome());
-						}
-					}
-					
-					do {
-						System.out.println("Quale terra vuoi giocare? ");
-						giocaqualeterra = scanner.nextInt()-1;
-						if (opponent.mano.get(giocaqualeterra).getTipo() == Tipo.Terra) {
-							System.out.println("Si, è un terra: ");
-							opponent.terre.add(opponent.mano.get(giocaqualeterra));
-						}
-						else {
-							System.out.println("No, non è una terra: ");
-							escludi = 1;
-						}
-					}while(escludi1 != 0);	
-				}
-				
-				else if (giocaterre.equals("No") || giocaterre.equals("NO") || giocaterre.equals("nO") || giocaterre.equals("no")) {
+			System.out.println("\u001B[1m" + "\u001B[41m" + "FASE PRINCIPALE 1" + "\u001B[0m");
+				if(opponent.checkTerre() == false) {
+					System.out.println("Non hai terre da giocare. ");
 					continue;
 				}
-				else {	
-					System.out.println("Scelta invalida. ");
-					escludi = 1;
-				}
-			} while(escludi != 0);	
-			numeroditurni++;
-			if (opponent.terre.isEmpty() == false) {
+				else {
+					System.out.println("Vuoi giocare le terre? Si o No: ");
+					giocaterre = scanner.nextLine();	
+					if(giocaterre.equals("Si") || giocaterre.equals("SI") || giocaterre.equals("sI") || giocaterre.equals("si")) {
+						for(int i = 0; i < player.mano.size(); i++) {
+							if(player.mano.get(i).getTipo() == Tipo.Terra) {
+								System.out.println(i + 1 + " " + player.mano.get(i).getNome());
+							}
+						}
+						do {
+							System.out.println("Quale terra vuoi giocare? ");
+							giocaqualeterra = scanner.nextInt()-1;
+							if (player.mano.get(giocaqualeterra).getTipo() == Tipo.Terra) {
+								System.out.println("Si, è un terra: ");
+								player.terreInCampo.add((Terra)player.mano.get(giocaqualeterra));
+								player.mano.remove(giocaqualeterra);
+							}
+							else {
+								System.out.println("No, non è una terra: ");
+								escludi = 1;
+							}
+							for(int i = 0; i < player.terreInCampo.size(); i++) {
+								player.terreInCampo.get(i).attivaORdisattiva();
+							}
+						}while(escludi1 != 0);	
+					}
+					
+					else if (giocaterre.equals("No") || giocaterre.equals("NO") || giocaterre.equals("nO") || giocaterre.equals("no")) {
+						continue;
+					}
+					else {	
+						System.out.println("Scelta invalida. ");
+						escludi = 1;
+					}
+				} while(escludi != 0);	
+				numeroditurni++;
+			
 				
-				System.out.println("Quali terre vuoi attivare? ");
-							
-			}
-			
-		}while(you.vita <= 0 || opponent.vita <= 0);
-		
+			}while(you.vita > 0 || opponent.vita > 0);
 	}
-	
-	public static boolean randomBool(double random) {
-		
+	public static boolean randomBool(double random) {	
 		if (random >= 0.5) {
-			
 			return true;
-		
 		} 
-		
 		else {
-		
 			return false;
-		
 		}	
 	}
+	
 }

@@ -52,18 +52,18 @@ public class Terra extends Carta{
 		this.utilizzata = utilizzata;
 	}
 	
-	public void gira() {
+	public void attivaORdisattiva() {
 		Scanner sc = new Scanner(System.in);
-		if(isUtilizzata()) {
-			setUtilizzata(false);
-			setManaSecondario(null);
-		} else {
-			setUtilizzata(true);
-			System.out.println("Scegli il mana tra");
-			for(int i = 0; i < mana.size(); i++) {
-				System.out.println(" " + mana.get(i));
+		if(this.isUtilizzata()) {
+			this.setUtilizzata(false);
+			this.setManaSecondario(null);
+		} else if(this.mana.size() > 1){
+			this.setUtilizzata(true);
+			System.out.println("Scegli il mana tra: ");
+			for(int i = 0; i < this.mana.size(); i++) {
+				System.out.println((i+1) + " " + this.mana.get(i));
 			}
-			setManaSecondario(mana.get(sc.nextInt()));
+			this.setManaSecondario(this.mana.get(sc.nextInt()));
 		}
 		sc.close();
 	}
